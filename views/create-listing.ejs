@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Create Listing</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+</head>
+
+<body>
+  <h1>Create a listing</h1>
+  <form class="create-listing" action="/tbd" method="POST">
+    <div class="form-title">
+      <label for="title">Title</label>
+      <div>
+        <input class="form-control" type="title" name="title" placeholder="title" />
+      </div>
+    </div>
+    <div class="form-description">
+      <label for="description">Description</label>
+      <div>
+        <input class="form-control" type="description" name="description" placeholder="description" />
+      </div>
+    </div>
+    <div class="form-price">
+      <label for="price">Price</label>
+      <div>
+        <input class="form-control" type="price" name="price" placeholder="price" />
+      </div>
+    </div>
+    <div class="form-image">
+      <label for="img">Image URL</label>
+      <div>
+        <input class="form-control" type="img" name="img" placeholder="URL" />
+      </div>
+    </div>
+    <button type="submit" class="btn-primary">Create</button>
+  </form>
+</body>
+
+</html>
