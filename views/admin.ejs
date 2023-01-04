@@ -111,22 +111,81 @@
    </div>
 
    <section class="admin-messages-container">
-    <div class="message">
-      <div>
-        <h3 class="user">User 1</h3>
-        <p>This is a test message</p>
+    <!-- First Message -->
+    <div class="message-component">
+      <div class="message-details">
+        <div class="details">
+          <h3 class="title">Message ID</h3>
+          <p>1</p>
+        </div>
+        <div class="details">
+          <h3 class="title">From</h3>
+          <p>Akashdeep Sekhon</p>
+        </div>
       </div>
-      <div>
-        <button class="button">Reply</button>
-        <button class="button">Archive</button>
+      <div class="message-details">
+        <div class="details">
+          <h3 class="title">Email Address</h3>
+          <p>Kash@hotmail.com</p>
+        </div>
+        <div class="details">
+          <h3 class="title">Message Recieved</h3>
+          <p>January 3rd, 2023</p>
+        </div>
+      </div>
+      <div class="message-details">
+        <div class="details">
+          <h3 class="title">Message</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate tempor nibh, sit amet cursus nibh ultrices vitae. Phasellus id lectus pellentesque, convallis lacus id, convallis eros.</p>
+        </div>
+      </div>
+      <div class="button-container">
+        <button id="reply-button" class="button">Reply</button>
+        <button id="archive-button" class="button">Archive</button>
       </div>
     </div>
    </section>
+
+   <!-- Reply to message modal -->
+   <div id="reply-modal" class="modal-container">
+    <div class="modal-content">
+      <p class="reply-modal-message">Reply to message</p>
+      <textarea name="" id="reply-text-area" cols="30" rows="5"></textarea>
+      <button class="button">Send</button>
+      <button id="reply-cancel" class="button">Cancel</button>
+    </div>
+   </div>
 
 
   <!-- Footer partial view -->
   <%- include('partials/_footer') %>
 
+  <script>
+    let replyModal = document.getElementById("reply-modal")
+    let replyButton = document.getElementById("reply-button");
+    let replyCancel = document.getElementById("reply-cancel");
+    let replyTextArea = document.getElementById("reply-text-area");
+
+    //Open reply modal when user click reply button
+    replyButton.onclick = function() {
+      replyModal.style.display = "block";
+    };
+
+    //Close reply modal when user clicks the cancel button
+    replyCancel.onclick = function() {
+      replyTextArea.value = "";
+      replyModal.style.display = "none";
+    };
+
+    //Close reply modal if user clicks anywhere outside the modal
+    window.onclick = function(event) {
+      if (event.target == replyModal) {
+        replyTextArea.value = "";
+        replyModal.style.display = "none";
+      };
+    }
+
+  </script>
 </body>
 
 </html>
