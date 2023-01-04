@@ -1,0 +1,119 @@
+/*
+*
+* admin.css
+*
+*/
+
+.admin-heading-container {
+  margin-top: 25px;
+  width: 75%;
+  max-width: 1200;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25px;
+
+}
+
+.admin-welcome-banner {
+  color: #495579;
+  font-size: 2em;
+}
+
+.create-listing-container {
+  margin-top: 25px;
+  width: 75%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.new-listing {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #495579;
+  padding-bottom: 5px;
+}
+
+.new-listing-label {
+  color: #495579;
+  font-size: 1.3em;
+}
+
+.button {
+  background-color: #495579;
+  border: none;
+  color: #FFFBEB;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: black;
+}
+
+.manage-listings-container {
+  margin-top: 25px;
+  width: 75%;
+  height: auto;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+  margin-bottom: 25px;
+}
+
+.manage-listing-sold, .manage-listing-delete {
+  border: #495579 2px solid;
+  background-color: white;
+  padding: 3px;
+  margin-top: 10px;
+  border-radius: 15px;
+  width: auto;
+  font-size: 1em;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.manage-listing-sold:hover {
+  background-color: #495579;
+  color: #FFFBEB;
+}
+
+.manage-listing-delete:hover {
+  background-color: rgb(247, 102, 102);
+  color: #FFFBEB;
+}
+
+.admin-messages-container {
+  width: 75%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 50px;
+}
+
+.message {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.user {
+  color: #495579;
+  font-weight: 600;
+}
