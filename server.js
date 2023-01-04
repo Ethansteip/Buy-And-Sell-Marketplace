@@ -31,9 +31,11 @@ app.use(express.static('public'));
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
-const createListingRoute = require('./routes/create-listing');
+const createListingRoutes = require('./routes/create-listing');
 const viewAllProductsRoutes = require('./routes/view-all-products.js');
+const userProfileRoutes = require('./routes/user-profile');
 const adminView = require('./routes/admin.js');
+
 
 
 // Mounet all resourc routes
@@ -42,9 +44,11 @@ const adminView = require('./routes/admin.js');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
-app.use('/create', createListingRoute);
+app.use('/create', createListingRoutes);
 app.use('/view-all-products', viewAllProductsRoutes);
+app.use('/profile', userProfileRoutes);
 app.use('/admin', adminView);
+
 
 // Note: mount other resources here, using the same pattern above
 
