@@ -33,6 +33,7 @@ const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const createListingRoute = require('./routes/create-listing');
 const viewAllProductsRoutes = require('./routes/view-all-products.js');
+const adminView = require('./routes/admin.js');
 
 
 // Mounet all resourc routes
@@ -43,6 +44,7 @@ app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/create', createListingRoute);
 app.use('/view-all-products', viewAllProductsRoutes);
+app.use('/admin', adminView);
 
 // Note: mount other resources here, using the same pattern above
 
