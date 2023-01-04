@@ -35,6 +35,8 @@ const createListingRoutes = require('./routes/create-listing');
 const viewAllProductsRoutes = require('./routes/view-all-products.js');
 const userProfileRoutes = require('./routes/user-profile');
 const adminView = require('./routes/admin.js');
+const productView = require('./routes/product-page.js');
+const userMessage = require('./routes/messages.js');
 
 
 
@@ -48,7 +50,8 @@ app.use('/create', createListingRoutes);
 app.use('/view-all-products', viewAllProductsRoutes);
 app.use('/profile', userProfileRoutes);
 app.use('/admin', adminView);
-
+app.use('/listing', productView);
+app.use('/messages', userMessage);
 
 // Note: mount other resources here, using the same pattern above
 
