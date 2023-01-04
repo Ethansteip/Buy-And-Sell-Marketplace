@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="/styles/navigation.css">
   <!-- footer.css -->
   <link rel="stylesheet" href="/styles/footer.css">
+  <!-- create-listing.css -->
+  <link rel="stylesheet" href="/styles/create-listing.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +36,7 @@
   <!-- Navigation partial view -->
   <%- include('partials/_navigation') %>
 
-  <h1>Create a listing</h1>
+  <h1 class="create-listing-title">Create a listing</h1>
   <form class="create-listing" action="/tbd" method="POST">
     <div class="form-title">
       <label for="title">Title</label>
@@ -45,7 +47,7 @@
     <div class="form-description">
       <label for="description">Description</label>
       <div>
-        <input class="form-control" type="description" name="description" placeholder="description" />
+        <input class="description-form-control" type="description" name="description" placeholder="description" />
       </div>
     </div>
     <div class="form-price">
