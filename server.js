@@ -34,6 +34,9 @@ const usersRoutes = require('./routes/users');
 const createListingRoutes = require('./routes/create-listing');
 const viewAllProductsRoutes = require('./routes/view-all-products.js');
 const userProfileRoutes = require('./routes/user-profile');
+const adminView = require('./routes/admin.js');
+
+
 
 // Mounet all resourc routes
 // Note: Feel free to replace the example routes below with your own
@@ -44,6 +47,8 @@ app.use('/users', usersRoutes);
 app.use('/create', createListingRoutes);
 app.use('/view-all-products', viewAllProductsRoutes);
 app.use('/profile', userProfileRoutes);
+app.use('/admin', adminView);
+
 
 // Note: mount other resources here, using the same pattern above
 

@@ -69,7 +69,8 @@ a {
 }
 
 .register-link:hover {
-  background-color: #adaa9e;
+  background-color: black;
+  color: #FFFBEB;
 }
 
 .hamburger-menu {
