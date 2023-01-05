@@ -186,12 +186,15 @@
 
 .listing-card-view {
   border: #495579 2px solid;
+  color: #495579;
   background-color: white;
+  text-align: center;
   padding: 3px;
   border-radius: 15px;
   width: 25%;
   font-size: 1em;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .listing-card-view:hover {

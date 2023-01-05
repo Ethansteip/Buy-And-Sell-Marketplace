@@ -82,7 +82,7 @@
           <p class="listing-card-price"><%=  listing.price %></p>
         </div>
         <div class="view-favourite-container">
-          <button class="listing-card-view">View</button>
+          <a href="/listing/<%=  listing.id %>" class="listing-card-view">View</a>
 
           <form action="/listing/<%=  listing.id %>/favourite" method="POST">
 

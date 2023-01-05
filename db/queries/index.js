@@ -6,7 +6,7 @@ const db = require('../connection');
 const getPopularProducts = () => {
 
   const queryString = `
-  SELECT * FROM listings
+  SELECT listings.id AS id, listings.listing_title, listings.price/100, listings.image_url FROM listings
   ORDER BY created_at
   Limit 9;
   `;
