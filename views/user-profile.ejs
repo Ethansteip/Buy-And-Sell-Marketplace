@@ -51,17 +51,12 @@
           <p class="favourites-card-price"><%=  favourite.price %></p>
         </div>
         <button class="favourites-card-view">View</button>
-
-
         <form action="/profile/<%= favourite.favourites_id %>/delete" method="POST">
         <button type='submit' class="favourites-card-remove">Remove</button>
       </form>
-
      </div>
-     <!-- </div> -->
     <% } %>
-
-
+  </section>
 
 
      <!--user messages section-->
@@ -82,7 +77,7 @@
      </div>
 
 
-  </section>
+
   <!-- Footer partial view -->
   <%- include('partials/_footer') %>
 

@@ -92,7 +92,7 @@ body {
 }
 
 .messages-container {
-  width: 100%;
+  width: 65%;
   display: flex;
   flex-direction: column;
 }
