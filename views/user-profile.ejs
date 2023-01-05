@@ -43,34 +43,27 @@
 
      <!-- favourites grid view -->
      <div class="favourites-grid-container">
+      <% for (let favourite of favourites) { %>
       <div class="favourites-card">
-        <img class="favourites-card-image" src="https://images.pexels.com/photos/11591876/pexels-photo-11591876.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+        <img class="favourites-card-image" src="<%=  favourite.image_url %>">
         <div class="title-price-container">
-          <h3 class="favourites-card-title">PS5 Controller</h3>
-          <p class="favourites-card-price">$69.90</p>
+          <h3 class="favourites-card-title"><%=  favourite.listing_title %></h3>
+          <p class="favourites-card-price"><%=  favourite.price %></p>
         </div>
         <button class="favourites-card-view">View</button>
-        <button class="favourites-card-remove">Remove</button>
+
+
+        <form action="/profile/<%= favourite.favourites_id %>/delete" method="POST">
+        <button type='submit' class="favourites-card-remove">Remove</button>
+      </form>
+
      </div>
-     <div class="favourites-card">
-      <img class="favourites-card-image" src="https://images.pexels.com/photos/1067556/pexels-photo-1067556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-      <div class="title-price-container">
-        <h3 class="favourites-card-title">A pretty cool painting</h3>
-        <p class="favourites-card-price">$40.00</p>
-      </div>
-      <button class="favourites-card-view">View</button>
-      <button class="favourites-card-remove">Remove</button>
-     </div>
-     <div class="favourites-card">
-      <img class="favourites-card-image" src="https://images.pexels.com/photos/13789945/pexels-photo-13789945.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-      <div class="title-price-container">
-        <h3 class="favourites-card-title">Tennis Racket</h3>
-        <p class="favourites-card-price">$30.35</p>
-      </div>
-      <button class="favourites-card-view">View</button>
-      <button class="favourites-card-remove">Remove</button>
-     </div>
-    </div>
+     <!-- </div> -->
+    <% } %>
+
+
+
+
      <!--user messages section-->
      <div class="messages-container">
       <h3 class="messages-title">Your Messages</h3>
@@ -85,6 +78,7 @@
       <h2 class="test-user">Test User 2</h2>
       <p>Theres a snake in my boot!</p>
      <button class="reply-button">Reply</button>
+     </div>
      </div>
 
 

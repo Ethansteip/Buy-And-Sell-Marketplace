@@ -20,4 +20,27 @@ const getPopularProducts = () => {
     });
 };
 
-module.exports = { getPopularProducts };
+const favouriteListing = (listing_id) => {
+
+  const queryString = `
+  INSERT INTO favourites (listing_id, user_id)
+  VALUES ($1, 1)
+  `;
+
+  const queryParams = [
+    listing_id
+  ];
+
+  return db.query(queryString, queryParams)
+    .then(data => {
+      return data.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
+
+
+
+
+module.exports = { getPopularProducts, favouriteListing };

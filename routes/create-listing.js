@@ -6,4 +6,7 @@ router.get('/', (req, res) => {
   res.render('create-listing');
 });
 
+
+
+
 module.exports = router;
