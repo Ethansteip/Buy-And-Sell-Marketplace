@@ -19,7 +19,7 @@ router.post('/listing/:id/favourite', (req, res) => {
   console.log(data);
   index.favouriteListing(data.params.id)
     .then(() => {
-      res.redirect('/')
+      res.redirect('/');
     })
     .catch(err => {
       console.log(err.message);
