@@ -61,8 +61,11 @@
       <form class="message-container" method="POST" action="/messages">
         <p class="description-text">Send a message to the seller</p>
         <textarea name="message" id="" cols="30" rows="5"></textarea>
-        <button type="submit" class="message-submission-button">Submit Message</button>
+        <button type="submit" id="submission-button" class="message-submission-button">Submit Message</button>
       </form>
+      <div id="submission-toast" class="submission-confirmation-toast">
+        <p class="">Your message was sent to the seller!</p>
+      </div>
     </div>
     <div>
       <img class="product-image"src="https://images.pexels.com/photos/12163946/pexels-photo-12163946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
@@ -84,6 +87,13 @@
       $(this).css('border', '2px solid rgb(255, 93, 93)');
       console.log("Favourited!");
     });
+
+    let submissionButton = document.getElementById("submission-button");
+    let submissionToast = document.getElementById("submission-toast");
+
+    submissionButton.onclick = function() {
+      submissionToast.style.display = "flex";
+    }
 
   </script>
 </body>

@@ -6,10 +6,20 @@ const message = require('../db/queries/messages');
 router.post('/', (req, res) => {
   const data = req.body;
   console.log(data.message);
-  message.submitMessage(data.message).then(() => (res.send('ok')));
+  message.submitMessage(data.message)
+    .then(() => {
+      setTimeout(() => {
+        res.redirect('/listing');
+      }, 2000);
+    });
 });
 
-//get all messages
+//Get all admin messages
+router.get('/admin', (req, res) => {
+
+  res.send('You made it to the route!');
+
+});
 
 
 module.exports = router;

@@ -37,6 +37,7 @@ const userProfileRoutes = require('./routes/user-profile');
 const adminView = require('./routes/admin.js');
 const productView = require('./routes/product-page.js');
 const userMessage = require('./routes/messages.js');
+const index = require('./routes/index.js');
 
 
 
@@ -52,6 +53,7 @@ app.use('/profile', userProfileRoutes);
 app.use('/admin', adminView);
 app.use('/listing', productView);
 app.use('/messages', userMessage);
+app.use('/', index);
 
 // Note: mount other resources here, using the same pattern above
 
@@ -59,9 +61,10 @@ app.use('/messages', userMessage);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-app.get('/', (req, res) => {
-  res.render('index');
-});
+// Created our own index route file at ./routes/index.js
+// app.get('/', (req, res) => {
+//   res.render('index');
+// });
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
