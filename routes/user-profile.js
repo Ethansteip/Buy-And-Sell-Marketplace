@@ -22,7 +22,7 @@ router.post('/:id/delete', (req, res) => {
   console.log(data);
   favourite.deleteFavourites(data.params.id)
     .then(() => {
-      res.redirect('/profile')
+      res.redirect('/profile');
     })
 
     .catch(err => {
