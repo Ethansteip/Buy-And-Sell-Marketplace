@@ -44,117 +44,28 @@
       <div class="dropdown">
         <button class="dropbtn">Filter Price</button>
         <div class="dropdown-content">
-          <a href="#">Lowest</a>
-          <a href="#">Highest</a>
+          <a href="/view-all-products/lowest">Lowest</a>
+          <a href="/view-all-products/highest">Highest</a>
         </div>
       </div>
     </div>
     <!-- Listings grid -->
     <div class="listings-cards-container">
       <!-- First Row -->
+      <% for (let listing of listings) { %>
       <div class="listing-card">
-        <img class="listing-card-image"src="https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
+        <img class="listing-card-image"src="<%=  listing.image_url %>" alt="">
         <div class="title-price-container">
-          <h4 class="listing-card-title">Art Deco Dining Chair</h4>
-          <p class="listing-card-price">$79.44</p>
+          <h4 class="listing-card-title"><%=  listing.listing_title %></h4>
+          <p class="listing-card-price"><%=  listing.price %></p>
         </div>
         <div class="view-favourite-container">
           <button class="listing-card-view">View</button>
           <svg id="favourite-icon-1" class="favourite-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
         </div>
       </div>
-      <div class="listing-card">
-        <img class="listing-card-image"src="https://images.pexels.com/photos/9646747/pexels-photo-9646747.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
-        <div class="title-price-container">
-          <h4 class="listing-card-title">Floating Cabinet</h4>
-          <p class="listing-card-price">$219.99</p>
-        </div>
-        <div class="view-favourite-container">
-          <button class="listing-card-view">View</button>
-          <svg id="favourite-icon-1" class="favourite-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-        </div>
-      </div>
-      <div class="listing-card">
-        <img class="listing-card-image"src="https://images.pexels.com/photos/1067556/pexels-photo-1067556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
-        <div class="title-price-container">
-          <h4 class="listing-card-title">A pretty cool painting</h4>
-          <p class="listing-card-price">$40.00</p>
-        </div>
-        <div class="view-favourite-container">
-          <button class="listing-card-view">View</button>
-          <svg id="favourite-icon-1" class="favourite-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-        </div>
-      </div>
-
-      <!-- Second Row -->
-      <div class="listing-card">
-        <img class="listing-card-image"src="https://images.pexels.com/photos/12163946/pexels-photo-12163946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
-        <div class="title-price-container">
-          <h4 class="listing-card-title">2018 Hyundai car</h4>
-          <p class="listing-card-price">$20,400</p>
-        </div>
-        <div class="view-favourite-container">
-          <button class="listing-card-view">View</button>
-          <svg id="favourite-icon-1" class="favourite-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-        </div>
-      </div>
-      <div class="listing-card">
-        <img class="listing-card-image"src="https://images.pexels.com/photos/11591876/pexels-photo-11591876.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
-        <div class="title-price-container">
-          <h4 class="listing-card-title">PS5 Controller</h4>
-          <p class="listing-card-price">$69.90</p>
-        </div>
-        <div class="view-favourite-container">
-          <button class="listing-card-view">View</button>
-          <svg id="favourite-icon-1" class="favourite-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-        </div>
-      </div>
-      <div class="listing-card">
-        <img class="listing-card-image"src="https://images.pexels.com/photos/3101767/pexels-photo-3101767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
-        <div class="title-price-container">
-          <h4 class="listing-card-title">Gently used succulent</h4>
-          <p class="listing-card-price">$6.50</p>
-        </div>
-        <div class="view-favourite-container">
-          <button class="listing-card-view">View</button>
-          <svg id="favourite-icon-1" class="favourite-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-        </div>
-      </div>
-
-      <!-- third Row -->
-      <div class="listing-card">
-        <img class="listing-card-image"src="https://images.pexels.com/photos/5720724/pexels-photo-5720724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
-        <div class="title-price-container">
-          <h4 class="listing-card-title">Cacti Trio</h4>
-          <p class="listing-card-price">$20.00</p>
-        </div>
-        <div class="view-favourite-container">
-          <button class="listing-card-view">View</button>
-          <svg id="favourite-icon-1" class="favourite-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-        </div>
-      </div>
-      <div class="listing-card">
-        <img class="listing-card-image"src="https://images.pexels.com/photos/13789945/pexels-photo-13789945.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
-        <div class="title-price-container">
-          <h4 class="listing-card-title">Tennis Racket</h4>
-          <p class="listing-card-price">$30.35</p>
-        </div>
-        <div class="view-favourite-container">
-          <button class="listing-card-view">View</button>
-          <svg id="favourite-icon-1" class="favourite-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-        </div>
-      </div>
-      <div class="listing-card">
-        <img class="listing-card-image"src="https://images.pexels.com/photos/9646751/pexels-photo-9646751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
-        <div class="title-price-container">
-          <h4 class="listing-card-title">Plectric piano</h4>
-          <p class="listing-card-price">$350.00</p>
-        </div>
-        <div class="view-favourite-container">
-          <button class="listing-card-view">View</button>
-          <svg id="favourite-icon-1" class="favourite-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-        </div>
-      </div>
+      <% } %>
+      <!-- End Card -->
     </div>
   </section>
 
