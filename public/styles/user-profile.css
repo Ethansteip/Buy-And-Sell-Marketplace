@@ -43,12 +43,7 @@ body {
   font-weight: 600;
 }
 
-.favourites-card-view {
-  font-size: 1em;
-  color: #495579;
-  font-weight: 300;
-  text-decoration: none;
-}
+
 
 /* .favourites-card {
   display: flex;
@@ -68,7 +63,8 @@ body {
   padding: 3px;
   margin-top: 10px;
   border-radius: 15px;
-  width: 25%;
+  width: 100%;
+  color: #495579;
   font-size: 1em;
   transition: all 0.3s ease;
   cursor: pointer;
