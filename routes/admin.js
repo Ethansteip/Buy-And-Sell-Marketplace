@@ -30,9 +30,7 @@ router.get('/:id/delete', (req, res) => {
 router.post('/:id/sold', (req, res) => {
   admin.markLitingAsSold(req.params.id)
     .then(() => {
-      setTimeout(() => {
-        res.redirect('/admin');
-      }, 1000);
+      res.redirect(`/listing/${req.params.id}`);
     })
     .catch(err => {
       console.log(err.message);

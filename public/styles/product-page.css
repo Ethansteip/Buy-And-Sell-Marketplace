@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: row;
   width: 75%;
+  max-width: 1000px;
   height: 500px;
   justify-content: space-between;
   margin-Top: 100px;
@@ -65,13 +66,19 @@
 
 .availability-container {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  margin-top: 15px;
   width: 60%;
 }
 
 .green-check {
   color: rgb(72, 196, 72);
+  height: 25px;
+  margin-right: 10px;
+}
+
+.red-check {
+  color: rgb(255, 74, 74);
   height: 25px;
   margin-right: 10px;
 }

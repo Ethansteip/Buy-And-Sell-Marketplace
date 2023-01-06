@@ -42,7 +42,7 @@
     <div class="product-info-container">
       <h1 class="product-title"><%=  listing.listing_title %></h1>
       <div class="price-user-container">
-        <h2 class="price"><%=  listing.price %></h2>
+        <h2 class="price">$<%=  listing.dollars %>.00</h2>
         <div class="vl"></div>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -54,10 +54,20 @@
         <%=  listing.listing_description %>
       </p>
       <div class="availability-container">
+
+        <!-- Reply to message modal -->
+       <% if( listings[0].sold_status === false){ %>
         <svg class="green-check" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
         <p class="description-text">
           Product Available
         </p>
+      <% } else{ %>
+        <svg class="red-check" fill="red" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        <p class="description-text">
+          Product Unavailable
+        </p>
+      <% } %>
+
       </div>
       <form class="message-container" method="POST" action="/messages/1">
         <p class="description-text">Send a message to the seller</p>

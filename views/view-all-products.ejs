@@ -57,12 +57,12 @@
         <img class="listing-card-image"src="<%=  listing.image_url %>" alt="">
         <div class="title-price-container">
           <h4 class="listing-card-title"><%=  listing.listing_title %></h4>
-          <p class="listing-card-price"><%=  listing.price %></p>
+          <p class="listing-card-price">$<%=  listing.dollars %>.00</p>
         </div>
         <div class="view-favourite-container">
           <a href="/listing/<%=  listing.id %>" class="listing-card-view">View</a>
           <form action="/listing/<%=  listing.id %>/favourite" method="POST">
-          <button type="submit">
+          <button type="submit" class="favourite-button">
             <svg id="favourite-icon-1" class="favourite-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
           </button>
         </form>

@@ -7,5 +7,5 @@ CREATE TABLE listings (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   price INTEGER NOT NULL,
   sold_status BOOLEAN,
-  created_at DATE
+  created_at TIMESTAMP
 );

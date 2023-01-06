@@ -6,9 +6,8 @@ const db = require('../connection');
 const getPopularProducts = () => {
 
   const queryString = `
-  SELECT listings.id AS id, listings.listing_title, listings.price, listings.image_url FROM listings
-  ORDER BY created_at
-  Limit 9;
+  SELECT listings.id AS id, listings.listing_title, (listings.price / 100) AS dollars, listings.image_url FROM listings
+  ORDER BY created_at DESC LIMIT 9;
   `;
 
   return db.query(queryString)
@@ -47,7 +46,7 @@ const getProductListing = (id) => {
   ];
 
   const queryString = `
-  SELECT * FROM listings
+  SELECT listings.id AS id, listings.sold_status AS sold_status, listings.listing_title, listings.listing_description, (listings.price / 100) AS dollars, listings.image_url FROM listings
   WHERE id = $1;
   `;
 

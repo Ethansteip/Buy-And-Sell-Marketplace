@@ -19,13 +19,14 @@ router.post('/listing/:id/favourite', (req, res) => {
   console.log(data);
   index.favouriteListing(data.params.id)
     .then(() => {
-      res.redirect('/');
+      res.redirect('/profile');
     })
     .catch(err => {
       console.log(err.message);
     });
 });
 
+// Get individual product listing
 router.get('/listing/:id/', (req, res) => {
   const id = req.params.id;
   index.getProductListing(id)
