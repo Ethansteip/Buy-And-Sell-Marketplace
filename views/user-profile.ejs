@@ -4,9 +4,9 @@
 <head>
   <title>User Profile</title>
 
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
@@ -37,49 +37,53 @@
   <!-- Navigation partial view -->
   <%- include('partials/_navigation') %>
 
- <!-- User Favourites Section -->
-  <section class="favourites-container">
-    <h1 class="user-favourites-title">Your Favourites</h1>
+    <!-- User Favourites Section -->
+    <section class="favourites-container">
+      <h1 class="user-favourites-title">Your Favourites</h1>
 
-     <!-- favourites grid view -->
-     <div class="favourites-grid-container">
-      <% for (let favourite of favourites) { %>
-      <div class="favourites-card">
-        <img class="favourites-card-image" src="<%=  favourite.image_url %>">
-        <div class="title-price-container">
-          <h3 class="favourites-card-title"><%=  favourite.listing_title %></h3>
-          <p class="favourites-card-price"><%=  favourite.price %></p>
-        </div>
-        <button class="favourites-card-view">View</button>
-        <form action="/profile/<%= favourite.favourites_id %>/delete" method="POST">
-        <button type='submit' class="favourites-card-remove">Remove</button>
-      </form>
-     </div>
-    <% } %>
-  </section>
+      <!-- favourites grid view -->
+      <div class="favourites-grid-container">
+        <% for (let favourite of favourites) { %>
+          <div class="favourites-card">
+            <img class="favourites-card-image" src="<%=  favourite.image_url %>">
+            <div class="title-price-container">
+              <h3 class="favourites-card-title">
+                <%= favourite.listing_title %>
+              </h3>
+              <p class="favourites-card-price">
+                <%= favourite.price %>
+              </p>
+            </div>
+            <button class="favourites-card-view">View</button>
+            <form action="/profile/<%= favourite.favourites_id %>/delete" method="POST">
+              <button type='submit' class="favourites-card-remove">Remove</button>
+            </form>
+          </div>
+          <% } %>
+    </section>
 
 
-     <!--user messages section-->
-     <div class="messages-container">
+    <!--user messages section-->
+    <div class="messages-container">
       <h3 class="messages-title">Your Messages</h3>
 
-     <div class="message-reply-box">
-      <h2 class="test-user">Test User</h2>
-      <p>To infinity and beyond!</p>
-     <button class="reply-button">Reply</button>
+      <div class="message-reply-box">
+        <h2 class="test-user">Test User</h2>
+        <p>To infinity and beyond!</p>
+        <button class="reply-button">Reply</button>
 
-     </div>
-     <div class="message-reply-box">
-      <h2 class="test-user">Test User 2</h2>
-      <p>Theres a snake in my boot!</p>
-     <button class="reply-button">Reply</button>
-     </div>
-     </div>
+      </div>
+      <div class="message-reply-box">
+        <h2 class="test-user">Test User 2</h2>
+        <p>Theres a snake in my boot!</p>
+        <button class="reply-button">Reply</button>
+      </div>
+    </div>
 
 
 
-  <!-- Footer partial view -->
-  <%- include('partials/_footer') %>
+    <!-- Footer partial view -->
+    <%- include('partials/_footer') %>
 
 </body>
 
