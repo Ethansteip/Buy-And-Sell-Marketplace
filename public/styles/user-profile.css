@@ -41,6 +41,7 @@ body {
 
 .favourites-card-title {
   font-weight: 600;
+  margin-bottom: 20px;
 }
 
 
@@ -58,6 +59,8 @@ body {
 }
 
 .favourites-card-view {
+  display: flex;
+  justify-content: center;
   border: #495579 2px solid;
   background-color: white;
   padding: 3px;

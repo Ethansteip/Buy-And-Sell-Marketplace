@@ -37,6 +37,15 @@
   <!-- Navigation partial view -->
   <%- include('partials/_navigation') %>
 
+     <!-- Create listing -->
+
+     <Section class="create-listing-container">
+      <div class="new-listing">
+        <h3 class="new-listing-label">Go to Messages</h3>
+        <a class="button" href="/messages/2/">Messages</a>
+      </div>
+    </Section>
+
  <!-- User Favourites Section -->
   <section class="favourites-container">
     <h1 class="user-favourites-title">Your Favourites</h1>
@@ -59,64 +68,14 @@
 
   </section>
 
-     <!--user messages section-->
-     <div class="messages-container">
-      <h3 class="messages-title">Your Messages</h3>
 
-     <div class="message-reply-box">
-      <h2 class="test-user">Test User</h2>
-      <p>To infinity and beyond!</p>
-     <button id="reply-button" class="button">Reply</button>
-
-     </div>
-     <div class="message-reply-box">
-      <h2 class="test-user">Test User 2</h2>
-      <p>Theres a snake in my boot!</p>
-     <button id="reply-button" class="button">Reply</button>
-     </div>
-     </div>
-
-       <!-- Reply to message modal -->
-   <div id="reply-modal" class="modal-container">
-    <div class="modal-content">
-      <p class="reply-modal-message">Reply to message</p>
-      <textarea name="" id="reply-text-area" cols="30" rows="5"></textarea>
-      <button class="button">Send</button>
-      <button id="reply-cancel" class="button">Cancel</button>
-    </div>
-   </div>
 
 
 
   <!-- Footer partial view -->
   <%- include('partials/_footer') %>
 
-  <script>
-    let replyModal = document.getElementById("reply-modal")
-    let replyButton = document.getElementById("reply-button");
-    let replyCancel = document.getElementById("reply-cancel");
-    let replyTextArea = document.getElementById("reply-text-area");
 
-    //Open reply modal when user click reply button
-    replyButton.onclick = function() {
-      replyModal.style.display = "block";
-    };
-
-    //Close reply modal when user clicks the cancel button
-    replyCancel.onclick = function() {
-      replyTextArea.value = "";
-      replyModal.style.display = "none";
-    };
-
-    //Close reply modal if user clicks anywhere outside the modal
-    window.onclick = function(event) {
-      if (event.target == replyModal) {
-        replyTextArea.value = "";
-        replyModal.style.display = "none";
-      };
-    }
-
-  </script>
 
 </body>
 
