@@ -21,10 +21,23 @@ router.get('/admin', (req, res) => {
 });
 
 
+router.get('/', (req, res) => {
+  res.render('messages.ejs');
+
+});
 
 
+router.get('/:id', (req, res) => {
+  message.getMessages(req.params.id)
+  .then((messages) => {
 
+    res.render("messages.ejs", {messages});
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
 
+  });
 
 
 module.exports = router;
