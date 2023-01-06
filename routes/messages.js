@@ -16,10 +16,15 @@ router.post('/', (req, res) => {
 
 //Get all admin messages
 router.get('/admin', (req, res) => {
-
   res.send('You made it to the route!');
 
 });
+
+
+
+
+
+
 
 
 module.exports = router;

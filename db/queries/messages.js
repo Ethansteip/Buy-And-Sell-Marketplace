@@ -27,4 +27,39 @@ const getAdminMessages = () => {
     });
 };
 
-module.exports = { submitMessage, getAdminMessages };
+//-----------------------------------------------------------------
+
+const submitUserMessage = (message) => {
+
+  const queryString = `
+  INSERT INTO messages (user_id, messages, created_at)
+  VALUES (1, $1, NOW());
+  `;
+
+  const queryParams = [
+    message
+  ];
+
+  return db.query(queryString, queryParams)
+    .then(data => {
+      return data.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
+
+
+const getUserMessages = () => {
+  return db.query('SELECT FROM messages WHERE user_id = 1;')
+    .then((result) => {
+      return result.rows[0];
+    });
+};
+
+
+
+
+
+
+module.exports = { submitMessage, getAdminMessages, getUserMessages, submitUserMessage };
