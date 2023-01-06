@@ -57,14 +57,10 @@
 
 
        <!-- Reply to message modal -->
-       <% if( messages[0].user_id  === 1){ %>
-        <form class="message-container" method="POST" action="/messages/2">
-      <% } else{ %>
-        <form class="message-container" method="POST" action="/messages/1">
-      <% } %>
 
-      <div id="reply-modal" class="modal-container">
-      <div class="modal-content">
+       <form class="message-container" method="POST" action="/messages/">
+   <div id="reply-modal" class="modal-container">
+    <div class="modal-content">
       <p class="reply-modal-message">Reply to message</p>
       <textarea name="message" id="reply-text-area" cols="30" rows="5"></textarea>
       <button class="button" type="submit">Send</button>
