@@ -37,6 +37,11 @@
   <!-- Navigation partial view -->
   <%- include('partials/_navigation') %>
 
+  <!-- Admin Welcome Banner -->
+  <section class="admin-heading-container">
+    <h1 class="admin-welcome-banner">Welcome, Ethan 👋</h1>
+  </section>
+
      <!-- Create listing -->
 
      <Section class="create-listing-container">
@@ -50,20 +55,28 @@
   <section class="favourites-container">
     <h1 class="user-favourites-title">Your Favourites</h1>
 
+    <% if( favourites.length < 1 ){ %>
+      <p class="new-listing-label">Sorry, you currently don'y have any favourites. Go favourite something!</p>
+    <% } %>
+
      <!-- favourites grid view -->
      <div class="favourites-grid-container">
       <% for (let favourite of favourites) { %>
-      <div class="favourites-card">
-        <img class="favourites-card-image" src="<%=  favourite.image_url %>">
-        <div class="title-price-container">
-          <h3 class="favourites-card-title"><%=  favourite.listing_title %></h3>
-          <p class="favourites-card-price"><%=  favourite.price %></p>
-        </div>
-        <a href="/listing/<%=  favourite.id %>" class="favourites-card-view">View</a>
-        <form action="/profile/<%= favourite.favourites_id %>/delete" method="POST">
-          <button type='submit' class="favourites-card-remove">Remove</button>
-        </form>
-     </div>
+
+        <div class="favourites-card">
+          <img class="favourites-card-image" src="<%=  favourite.image_url %>">
+          <div class="title-price-container">
+            <h3 class="favourites-card-title"><%=  favourite.listing_title %></h3>
+            <p class="favourites-card-price"><%=  favourite.price %></p>
+          </div>
+          <div class="forms-container">
+            <a href="/listing/<%=  favourite.id %>" class="admin-button">View</a>
+            <form action="/profile/<%= favourite.favourites_id %>/delete" method="POST">
+              <button type='submit' class="admin-button-delete">Remove</button>
+            </form>
+          </div>
+
+       </div>
     <% } %>
 
   </section>

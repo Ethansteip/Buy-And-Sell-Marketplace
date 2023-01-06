@@ -97,6 +97,23 @@
   background-color: #495579;
 }
 
+.favourite-button {
+  background-color: white;
+  border: none;
+
+}
+
+.favourite-icon {
+  width: 30px;
+  fill: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+.favourite-icon:hover {
+  fill: rgb(251, 103, 103);
+}
+
 /* Dropdown Button */
 .dropbtn {
   background-color:#495579;

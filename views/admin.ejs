@@ -70,75 +70,27 @@
       <div class="title-price-container">
         <h4 class="listing-card-title"><%=  listing.listing_title %></h4>
       </div>
-      <form class="listing-sold-form" action="/admin/<%=  listing.id %>/sold" method="POST">
-        <button id="sold-button" type="submit">Mark As Sold</button>
-      </form>
-      <form class="delete-form" action="/admin/<%=  listing.id %>/delete">
-        <button id="delete-button" type="submit">Delete</button>
-      </form>
+      <div class="forms-container">
+        <form class="listing-sold-form" action="/admin/<%=  listing.id %>/sold" method="POST">
+          <button class="admin-button" id="sold-button" type="submit">Mark As Sold</button>
+        </form>
+        <form class="delete-form" action="/admin/<%=  listing.id %>/delete">
+          <button class="admin-button-delete" id="delete-button" type="submit">Delete</button>
+        </form>
+     </div>
     </div>
     <% } %>
     <!-- End Manage Listing Card -->
   </section>
 
-  <div id="deleted-toast" class="submission-confirmation-toast">
+  <!-- <div id="deleted-toast" class="submission-confirmation-toast">
     <p class="">🗑 Listing Deleted 🗑</p>
   </div>
 
   <div id="sold-toast" class="submission-confirmation-toast">
     <p class="">🗑 Listing Marked As Sold 🗑</p>
-  </div>
+  </div> -->
 
-   <!-- Manage Messages -->
-   <div class="admin-heading-container">
-    <h3 class="new-listing-label">Manage Your Messages</h3>
-   </div>
-
-   <section class="admin-messages-container">
-    <!-- First Message -->
-    <div class="message-component">
-      <div class="message-details">
-        <div class="details">
-          <h3 class="title">Message ID</h3>
-          <p>1</p>
-        </div>
-        <div class="details">
-          <h3 class="title">From</h3>
-          <p>Akashdeep Sekhon</p>
-        </div>
-      </div>
-      <div class="message-details">
-        <div class="details">
-          <h3 class="title">Email Address</h3>
-          <p>Kash@hotmail.com</p>
-        </div>
-        <div class="details">
-          <h3 class="title">Message Recieved</h3>
-          <p>January 3rd, 2023</p>
-        </div>
-      </div>
-      <div class="message-details">
-        <div class="details">
-          <h3 class="title">Message</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate tempor nibh, sit amet cursus nibh ultrices vitae. Phasellus id lectus pellentesque, convallis lacus id, convallis eros.</p>
-        </div>
-      </div>
-      <div class="button-container">
-        <button id="reply-button" class="button">Reply</button>
-        <button id="archive-button" class="button">Archive</button>
-      </div>
-    </div>
-   </section>
-
-   <!-- Reply to message modal -->
-   <div id="reply-modal" class="modal-container">
-    <div class="modal-content">
-      <p class="reply-modal-message">Reply to message</p>
-      <textarea name="" id="reply-text-area" cols="30" rows="5"></textarea>
-      <button class="button">Send</button>
-      <button id="reply-cancel" class="button">Cancel</button>
-    </div>
-   </div>
 
 
   <!-- Footer partial view -->

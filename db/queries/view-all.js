@@ -5,7 +5,7 @@ const db = require('../connection');
 const getAllListings = () => {
 
   const queryString = `
-  SELECT * FROM listings
+  SELECT listings.id AS id, listings.listing_title, (listings.price / 100) AS dollars, listings.image_url AS image_url FROM listings
   ORDER BY created_at;
   `;
 
@@ -22,8 +22,8 @@ const getAllListings = () => {
 const GetHighestToLowestListings = () => {
 
   const queryString = `
-  SELECT * FROM listings
-  ORDER BY price DESC;
+  SELECT listings.id AS id, listings.listing_title, (listings.price / 100) AS dollars, listings.image_url AS image_url FROM listings
+  ORDER BY dollars DESC;
   `;
 
   return db.query(queryString)
@@ -39,8 +39,8 @@ const GetHighestToLowestListings = () => {
 const GetLowestToHighestListings = () => {
 
   const queryString = `
-  SELECT * FROM listings
-  ORDER BY price;
+  SELECT listings.id AS id, listings.listing_title, (listings.price / 100) AS dollars, listings.image_url AS image_url FROM listings
+  ORDER BY dollars;
   `;
 
   return db.query(queryString)

@@ -54,7 +54,8 @@ const submitUserMessage = (message) => {
 const getMessages = (id) => {
   const queryString = `
   SELECT * FROM messages
-  WHERE user_id = $1;
+  WHERE user_id = $1
+  ORDER BY created_at DESC;
   `;
 
   const queryParams = [

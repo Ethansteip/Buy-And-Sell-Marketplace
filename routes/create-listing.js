@@ -12,13 +12,10 @@ router.get('/', (req, res) => {
 
 router.post('/new', (req, res) => {
   const data = req.body;
-
-  console.log(data,"data");
-//------------------------------------------------
   listing.createListing(data)
     .then(() => {
       // res.redirect('/')
-      res.redirect('/')
+      res.redirect('/');
     })
     .catch(err => {
       console.log("insert error",err.message);
