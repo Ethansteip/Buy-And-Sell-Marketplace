@@ -113,9 +113,10 @@ textarea {
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 150px;
-  left: 15px;
-  background-color: rgb(223, 223, 223);
+  border: 2px solid black;
+  bottom: 0;
+  top: 75px;
+  background-color: rgb(249, 249, 249);
   border-radius: 5px;
   color: #495579;
   font-weight: 600;
