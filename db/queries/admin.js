@@ -1,14 +1,9 @@
-
 const db = require('../connection');
 
-
-// Get 9 products to populate index.ejs
-const getPopularProducts = () => {
+const getAdminCreatedListings = () => {
 
   const queryString = `
-  SELECT listings.id AS id, listings.listing_title, listings.price, listings.image_url FROM listings
-  ORDER BY created_at
-  Limit 9;
+  SELECT * FROM listings ORDER BY created_at LIMIT 6;
   `;
 
   return db.query(queryString)
@@ -20,16 +15,13 @@ const getPopularProducts = () => {
     });
 };
 
-const favouriteListing = (listingId) => {
+const deletelisting = (listingId) => {
+
+  const queryParams = [listingId];
 
   const queryString = `
-  INSERT INTO favourites (listing_id, user_id)
-  VALUES ($1, 1)
-  `;
-
-  const queryParams = [
-    listingId
-  ];
+  DELETE FROM listings
+  WHERE  id = $1`;
 
   return db.query(queryString, queryParams)
     .then(data => {
@@ -40,14 +32,13 @@ const favouriteListing = (listingId) => {
     });
 };
 
-const getProductListing = (id) => {
+const markLitingAsSold = (id) => {
 
-  const queryParams = [
-    id
-  ];
+  const queryParams = [id];
 
   const queryString = `
-  SELECT * FROM listings
+  UPDATE listings
+  SET sold_status = TRUE
   WHERE id = $1;
   `;
 
@@ -58,11 +49,7 @@ const getProductListing = (id) => {
     .catch((err) => {
       console.log(err.message);
     });
-
-
 };
 
 
-
-
-module.exports = { getPopularProducts, favouriteListing, getProductListing };
+module.exports = { getAdminCreatedListings, deletelisting, markLitingAsSold };

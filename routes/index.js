@@ -26,6 +26,17 @@ router.post('/listing/:id/favourite', (req, res) => {
     });
 });
 
+router.get('/listing/:id/', (req, res) => {
+  const id = req.params.id;
+  index.getProductListing(id)
+    .then((listings) => {
+      res.render("product-page", {listings});
+    })
+    .catch(err => {
+      console.log(err.message);
+    });
+});
+
 
 
 

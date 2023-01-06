@@ -50,12 +50,12 @@
           <h3 class="favourites-card-title"><%=  favourite.listing_title %></h3>
           <p class="favourites-card-price"><%=  favourite.price %></p>
         </div>
-        <button class="favourites-card-view">View</button>
+        <a href="/listing/<%=  favourite.id %>" class="favourites-card-view">View</a>
 
 
         <form action="/profile/<%= favourite.favourites_id %>/delete" method="POST">
-        <button type='submit' class="favourites-card-remove">Remove</button>
-      </form>
+          <button type='submit' class="favourites-card-remove">Remove</button>
+        </form>
 
      </div>
      <!-- </div> -->

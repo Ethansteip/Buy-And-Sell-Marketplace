@@ -55,55 +55,31 @@
     <h3 class="new-listing-label">Manage Your Listings</h3>
   </div>
   <section class="manage-listings-container">
+    <!-- Manage Listing Cards -->
+    <% for (let listing of listings) { %>
     <div class="listing-card">
-      <img class="listing-card-image"src="https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
+      <img class="listing-card-image"src="<%=  listing.image_url %>" alt="Chair">
       <div class="title-price-container">
-        <h4 class="listing-card-title">Art Deco Dining Chair</h4>
+        <h4 class="listing-card-title"><%=  listing.listing_title %></h4>
       </div>
-      <button class="manage-listing-sold">Mark As Sold</button>
-      <button class="manage-listing-delete">Delete</button>
+      <form class="listing-sold-form" action="/admin/<%=  listing.id %>/sold" method="POST">
+        <button id="sold-button" type="submit">Mark As Sold</button>
+      </form>
+      <form class="delete-form" action="/admin/<%=  listing.id %>/delete">
+        <button id="delete-button" type="submit">Delete</button>
+      </form>
     </div>
-    <div class="listing-card">
-      <img class="listing-card-image"src="https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
-      <div class="title-price-container">
-        <h4 class="listing-card-title">Art Deco Dining Chair</h4>
-      </div>
-      <button class="manage-listing-sold">Mark As Sold</button>
-      <button class="manage-listing-delete">Delete</button>
-    </div>
-    <div class="listing-card">
-      <img class="listing-card-image"src="https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
-      <div class="title-price-container">
-        <h4 class="listing-card-title">Art Deco Dining Chair</h4>
-      </div>
-      <button class="manage-listing-sold">Mark As Sold</button>
-      <button class="manage-listing-delete">Delete</button>
-    </div>
-    <div class="listing-card">
-      <img class="listing-card-image"src="https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
-      <div class="title-price-container">
-        <h4 class="listing-card-title">Art Deco Dining Chair</h4>
-      </div>
-      <button class="manage-listing-sold">Mark As Sold</button>
-      <button class="manage-listing-delete">Delete</button>
-    </div>
-    <div class="listing-card">
-      <img class="listing-card-image"src="https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
-      <div class="title-price-container">
-        <h4 class="listing-card-title">Art Deco Dining Chair</h4>
-      </div>
-      <button class="manage-listing-sold">Mark As Sold</button>
-      <button class="manage-listing-delete">Delete</button>
-    </div>
-    <div class="listing-card">
-      <img class="listing-card-image"src="https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
-      <div class="title-price-container">
-        <h4 class="listing-card-title">Art Deco Dining Chair</h4>
-      </div>
-      <button class="manage-listing-sold">Mark As Sold</button>
-      <button class="manage-listing-delete">Delete</button>
-    </div>
+    <% } %>
+    <!-- End Manage Listing Card -->
   </section>
+
+  <div id="deleted-toast" class="submission-confirmation-toast">
+    <p class="">🗑 Listing Deleted 🗑</p>
+  </div>
+
+  <div id="sold-toast" class="submission-confirmation-toast">
+    <p class="">🗑 Listing Marked As Sold 🗑</p>
+  </div>
 
    <!-- Manage Messages -->
    <div class="admin-heading-container">
@@ -184,6 +160,17 @@
         replyModal.style.display = "none";
       };
     }
+
+
+    let deleteButton = document.getElementById("delete-button");
+    let deleteToast = document.getElementById("deleted-toast");
+
+    deleteButton.onclick = function() {
+      deleteToast.style.display = "flex";
+    }
+
+
+
 
   </script>
 </body>

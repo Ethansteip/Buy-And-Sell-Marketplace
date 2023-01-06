@@ -37,11 +37,12 @@
   <!-- Navigation partial view -->
   <%- include('partials/_navigation') %>
 
+  <% for (let listing of listings) { %>
   <section class="main-container">
     <div class="product-info-container">
-      <h1 class="product-title">Product Title</h1>
+      <h1 class="product-title"><%=  listing.listing_title %></h1>
       <div class="price-user-container">
-        <h2 class="price">$220</h2>
+        <h2 class="price"><%=  listing.price %></h2>
         <div class="vl"></div>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -50,7 +51,7 @@
         <span class="fa fa-star unchecked"></span>
       </div>
       <p class="description-text">
-        This is a product description of an awesome product. Please message me if you would like to come pick up this product. I will sell it to you for no less than $220 and something something I don't know.
+        <%=  listing.listing_description %>
       </p>
       <div class="availability-container">
         <svg class="green-check" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
@@ -63,30 +64,22 @@
         <textarea name="message" id="" cols="30" rows="5"></textarea>
         <button type="submit" id="submission-button" class="message-submission-button">Submit Message</button>
       </form>
-      <div id="submission-toast" class="submission-confirmation-toast">
-        <p class="">Your message was sent to the seller!</p>
-      </div>
+
     </div>
     <div>
-      <img class="product-image"src="https://images.pexels.com/photos/12163946/pexels-photo-12163946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chair">
+      <img class="product-image"src="<%=  listing.image_url %>" alt="">
     </div>
   </section>
+  <% } %>
+
+  <div id="submission-toast" class="submission-confirmation-toast">
+    <p class="">📧 Your message was sent to the seller! 📧</p>
+  </div>
 
   <!-- Footer partial view -->
   <%- include('partials/_footer') %>
 
   <script>
-
-    let favouriteIcon = $('.favourite-icon');
-
-    favouriteIcon.click(function() {
-      favouriteIcon.css('fill', 'rgb(180, 180, 180)');
-      favouriteIcon.css('border', 'none');
-      $(this).css('fill', 'rgb(255, 93, 93)');
-      $(this).css('border-radius', '25px');
-      $(this).css('border', '2px solid rgb(255, 93, 93)');
-      console.log("Favourited!");
-    });
 
     let submissionButton = document.getElementById("submission-button");
     let submissionToast = document.getElementById("submission-toast");

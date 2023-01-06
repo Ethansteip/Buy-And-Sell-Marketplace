@@ -9,7 +9,7 @@ router.post('/', (req, res) => {
   message.submitMessage(data.message)
     .then(() => {
       setTimeout(() => {
-        res.redirect('/listing');
+        res.redirect('back');
       }, 2000);
     });
 });
