@@ -1,13 +1,14 @@
 const db = require('../connection');
 
-const submitMessage = (message) => {
+const submitMessage = (id, message) => {
 
   const queryString = `
   INSERT INTO messages (user_id, messages, created_at)
-  VALUES (1, $1, NOW());
+  VALUES ($1, $2, NOW());
   `;
 
   const queryParams = [
+    id,
     message
   ];
 

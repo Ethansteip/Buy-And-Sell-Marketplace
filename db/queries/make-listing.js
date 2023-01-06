@@ -7,7 +7,7 @@ const createListing = (listing) => {
 
   VALUES ($1, $2, $3, 1, $4, FALSE, NOW());
   `;
-  console.log('listing',listing)
+  console.log('listing',listing);
   const queryParams =
   [ listing.title, listing.description, listing.img, listing.price,
   ];
@@ -15,7 +15,7 @@ const createListing = (listing) => {
   return db.query(queryString, queryParams)
     .then(data => {
       return data.rows;
-    })
+    });
 };
 
 

@@ -3,10 +3,10 @@ const express = require('express');
 const router  = express.Router();
 const message = require('../db/queries/messages');
 
-router.post('/', (req, res) => {
-  const data = req.body;
-  console.log(data.message);
-  message.submitMessage(data.message)
+router.post('/:id', (req, res) => {
+  const messageBody = req.body;
+  const id = req.params.id;
+  message.submitMessage(id, messageBody.message)
     .then(() => {
       setTimeout(() => {
         res.redirect('back');
@@ -14,30 +14,16 @@ router.post('/', (req, res) => {
     });
 });
 
-//Get all admin messages
-router.get('/admin', (req, res) => {
-  res.send('You made it to the route!');
-
-});
-
-
-router.get('/', (req, res) => {
-  res.render('messages.ejs');
-
-});
-
-
 router.get('/:id', (req, res) => {
   message.getMessages(req.params.id)
-  .then((messages) => {
+    .then((messages) => {
 
-    res.render("messages.ejs", {messages});
-  })
-  .catch((err) => {
-    console.log(err.message);
-  });
-
-  });
+      res.render("messages.ejs", {messages});
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+});
 
 
 module.exports = router;
