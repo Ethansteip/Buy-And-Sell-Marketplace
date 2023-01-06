@@ -121,7 +121,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2em;
-  margin-bottom: 25px;
+  margin-bottom: 75px;
 }
 
 .manage-listing-sold, .manage-listing-delete {

@@ -3,7 +3,7 @@ const db = require('../connection');
 const getAdminCreatedListings = () => {
 
   const queryString = `
-  SELECT * FROM listings ORDER BY created_at LIMIT 6;
+  SELECT * FROM listings ORDER BY created_at;
   `;
 
   return db.query(queryString)
